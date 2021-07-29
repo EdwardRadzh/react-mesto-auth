@@ -8,7 +8,7 @@ function Main(props) {
     const [userDescription, setUserDescription] = React.useState();
     const [userAvatar, setUserAvatar] = React.useState();
 
-    const [cards, setCards] = React.useState([])
+    const [cards, setCards] = React.useState([]);
 
     React.useEffect(()=> {
         api.getUserInfo()
@@ -40,7 +40,6 @@ function Main(props) {
                     <div className="profile__container-avatar">
                         <img  className="profile__photo" src={userAvatar} alt="avatar" />
                         <button 
-                            
                             className="profile__photo-edit-button" 
                             aria-label="открыть форму обновления аватарки"
                             onClick={props.onEditAvatar}
@@ -65,16 +64,14 @@ function Main(props) {
                 ></button>
             </section>
             
-            <section className="elements">
-                
+            <section className="elements">   
             {cards.map(item => <Card
-                    card={item}
-                    key={item._id}
-                    onCardClick={props.onCardClick} />)}
-               
+                card={item}
+                key={item._id}
+                onCardClick={props.onCardClick} />)} 
             </section>
         </main>
     );
-}
+};
 
-export default Main
+export default Main;
