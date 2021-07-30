@@ -9,13 +9,13 @@ function Card(props) {
     }
 
     return(
-        <div key={card._id} className="elements__element">
+        <div className="elements__element">
             <button type="button" className="elements__trash"></button>
             <div className="elements__img-wrapper">
                 <img 
                 className="elements__img" 
                 src={card.link} 
-                alt="Фото"
+                alt={card.name}
                 onClick={handleClick} />
             </div>
             <div className="elements__overlay">
