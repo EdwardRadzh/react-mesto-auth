@@ -2,7 +2,7 @@ import useEscapeClose from "../utills/useEscapeClose";
 
 function ImagePopup(props) {
 
-    const { card, isOpen, onClose } = props;
+    const { card, isOpen, onClose } = props; //доделать
 
     useEscapeClose(isOpen, onClose);
 
