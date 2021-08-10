@@ -1,9 +1,13 @@
+import useEscapeClose from "../utills/useEscapeClose";
+
 function ImagePopup(props) {
 
-    const { card, onClose } = props;
+    const { card, isOpen, onClose } = props;
+
+    useEscapeClose(isOpen, onClose);
 
     return(
-    <div className={`popup popup_type_open ${card.name && 'popup_opened'}`}>
+    <div className={`popup popup_type_open ${card.name && 'popup_opened'}`} onClick={props.onOverlayClose}>
         <div className="popup__photo-container">
             <button 
             onClick={onClose} 

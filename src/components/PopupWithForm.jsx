@@ -1,8 +1,12 @@
 import React from 'react';
+import useEscapeClose from '../utills/useEscapeClose';
 
 function PopupWithForm(props) {
+    
+    useEscapeClose(props.isOpen, props.onClose);
+
     return(
-    <div className={`popup popup_type_${props.name} ${props.isOpen && "popup_opened"}`}>
+    <div className={`popup popup_type_${props.name} ${props.isOpen && "popup_opened"}`} onClick={props.onOverlayClose}>
         <div className="popup__container">
             <button 
             onClick={props.onClose}
@@ -15,7 +19,7 @@ function PopupWithForm(props) {
             <form 
             name={props.name} 
             className="popup__form popup__form_profile" 
-            >
+            onSubmit={props.onSubmit}>
             {props.children}
             <button 
             type="submit" 

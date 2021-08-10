@@ -34,7 +34,7 @@ export class Api {
             headers: this._headers,
         body: JSON.stringify({
         name: data.name,
-        about: data.description
+        about: data.about
         })  
         }).then(this._checkError)
     }
@@ -64,7 +64,7 @@ export class Api {
 
     //Удаление карточки
     deleteCard(data) {
-        return fetch(`${this._url}/cards/${data._id}`, {
+        return fetch(`${this._url}/cards/${data}`, {
           method: 'DELETE',
           headers: this._headers
         }).then(this._checkError)
@@ -85,6 +85,24 @@ export class Api {
           headers: this._headers,
         }).then(this._checkError)
       }
+
+    //Проверка постановки лайка
+    // changeLikeCardStatus(card, isLikes) {
+    //   if (isLikes) {
+    //     return this.setLike(card);
+    //   } else {
+    //     return this.deleteLike(card);
+    //   }
+    // }
+
+    //Проверка постановки лайка
+    changeLikeCardStatus(data, isNotLiked){
+      return fetch(`${this._url}/cards/likes/${data}`, {
+        method: isNotLiked ? "PUT" : "DELETE",
+        headers: this._headers,
+      })
+      .then(this._checkError)
+  }
 }
 
 const api = new Api({
