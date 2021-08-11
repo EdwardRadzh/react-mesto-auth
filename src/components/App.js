@@ -1,14 +1,15 @@
 import React from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import api from "../utills/Api";
+import api from '../utills/api';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import ImagePopup from './ImagePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import EditProfilePopup from './EditProfilePopup';
-import EditCardPopup from './EditCardPopup';
+import AddPlacePopup from './AddPlacePopup';
 import ConfirmDeleteCardPopup from './ConfirmDeleteCardPopup';
+
 
 
 function App() {
@@ -173,7 +174,7 @@ function App() {
         isSaving={saving}
         />
 
-        <EditCardPopup
+        <AddPlacePopup
         isOpen={isAddCardPopupOpen}
         onClose={closeAllPopups}
         onAddPlace={handleAddPlaceSubmit}
