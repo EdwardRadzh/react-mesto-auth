@@ -1,3 +1,4 @@
+import React from 'react';
 import useEscapeClose from "../utills/useEscapeClose";
 
 function ImagePopup(props) {
