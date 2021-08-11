@@ -1,8 +1,7 @@
 import React from 'react';
-import useEscapeClose from '../utills/useEscapeClose';
+import useEscapeClose from '../utils/useEscapeClose';
 
 function PopupWithForm(props) {
-    
     useEscapeClose(props.isOpen, props.onClose);
 
     return(
