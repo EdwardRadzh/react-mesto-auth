@@ -2,7 +2,7 @@ import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
 function ConfirmDeleteCardPopup(props) {
-    return(
+    return (
         <PopupWithForm
             isOpen={props.isOpen}
             onClose={props.onClose}
@@ -11,7 +11,7 @@ function ConfirmDeleteCardPopup(props) {
         >
 
         </PopupWithForm>
-        
+
     )
 }
 

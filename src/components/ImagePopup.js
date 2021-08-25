@@ -5,12 +5,13 @@ function ImagePopup(props) {
 
     const { card, isOpen, onClose } = props; //доделать
 
-    useEscapeClose(isOpen, onClose);
+    useEscapeClose(props.isOpen, onClose);
+    console.log(isOpen);
 
     return(
-    <div className={`popup popup_type_open ${card.name && 'popup_opened'}`} onClick={props.onOverlayClose}>
+    <div className={`popup popup_type_open ${card.name && 'popup_opened'}`} onClick={props.onOverlayClose} >
         <div className="popup__photo-container">
-            <button 
+            <button
             onClick={onClose} 
             type="button" 
             className="popup__close popup__close_type_photo-button">    

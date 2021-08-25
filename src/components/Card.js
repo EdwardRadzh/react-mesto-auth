@@ -12,10 +12,10 @@ function Card(props) {
 
     const isLiked = props.card.likes.some(i => i._id === currentUser._id);
     const cardLikeButtonClassName = (
-      `elements__like ${isLiked ? 'elements__like_active' : ''}`
+        `elements__like ${isLiked ? 'elements__like_active' : ''}`
     );
 
-    const { card, onCardClick} = props;
+    const { card, onCardClick } = props;
 
     function handleClick() {
         onCardClick(card);
@@ -29,15 +29,15 @@ function Card(props) {
         props.onCardDelete(card);
     }
 
-    return(
+    return (
         <div className="elements__element">
             <button type="button" className={cardDeleteButtonClassName} onClick={handleDeleteClick}></button>
             <div className="elements__img-wrapper">
-                <img 
-                className="elements__img" 
-                src={card.link} 
-                alt={card.name}
-                onClick={handleClick} />
+                <img
+                    className="elements__img"
+                    src={card.link}
+                    alt={card.name}
+                    onClick={handleClick} />
             </div>
             <div className="elements__overlay">
                 <h2 className="elements__title">{card.name}</h2>
