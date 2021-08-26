@@ -1,11 +1,9 @@
 import React from 'react';
-import useEscapeClose from "../utils/useEscapeClose";
+// import useEscapeClose from "../utils/useEscapeClose";
 
 function ImagePopup(props) {
 
-    const { card, isOpen, onClose } = props; //доделать
-
-    useEscapeClose(props.isOpen, onClose);
+    const { card, onClose } = props;
 
     return(
     <div className={`popup popup_type_open ${card.name && 'popup_opened'}`} onClick={props.onOverlayClose} >

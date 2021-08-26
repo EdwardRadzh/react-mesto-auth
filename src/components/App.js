@@ -33,7 +33,6 @@ function App() {
     const [saving, setSaving] = React.useState(false)
 
     const [loggedIn, setLoggedIn] = React.useState(false);
-    const [email, setEmail] = React.useState('');
 
     const [loginState, setLoginState] = React.useState(false);
 
@@ -95,7 +94,7 @@ function App() {
             })
             .catch(err => {
                 console.log(err);
-            });
+        });
     }
 
     //удалить карточку
@@ -108,7 +107,7 @@ function App() {
             })
             .catch(err => {
                 console.log(err);
-            });
+        });
     }
 
     function handleEditProfileClick() {
@@ -144,7 +143,7 @@ function App() {
             })
             .finally(() => {
                 setSaving(false)
-            })
+        })
     }
 
     function handleUpdateAvatar(data) {
@@ -159,7 +158,7 @@ function App() {
             })
             .finally(() => {
                 setSaving(false)
-            })
+        })
     }
 
     function handleAddPlaceSubmit(data) {
@@ -174,7 +173,7 @@ function App() {
             })
             .finally(() => {
                 setSaving(false)
-            })
+        })
     }
 
     function clickOnOverlayClose(evt) {
@@ -196,7 +195,7 @@ function App() {
           .catch((err) => {
             console.log(err);
             handleInfoTooltip(false)
-          });
+        });
     }
 
     function handleInfoTooltip(result) {

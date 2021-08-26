@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function Header(props) {
     const { loggedIn, onSignOut, userData, loginState } = props;
-    const email = userData ? userData.email : ""
-    console.log(userData.email, props);
+    const email = userData ? userData.email : "";
+    
     return (
         <header className="header">
             <img className="header__logo" src={logoWhite} alt="белый логотип" />
